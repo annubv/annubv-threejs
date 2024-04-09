@@ -1,0 +1,40 @@
+.full-width {
+  width: 100%;
+}
+
+.full-dimension {
+  height: 100%;
+  width: 100%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.pos-r {
+  position: relative;
+}
+
+.pos-a {
+  position: absolute;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.auto-scroll {
+  overflow: auto;
+}
+
+.has-scroll {
+  overflow: scroll;
+}
+
+.has-y-scroll {
+  overflow-y: scroll;
+}
+
+body {
+  outline-color: #90ff21;
+}
