@@ -5,10 +5,12 @@ import ThreeCanvas from '../ThreeCanvas';
 const HeroSection = () => {
   return (
     <section className={`${styles.heroSectionWrapper} pos-r`}>
-      <h2>Hi, I&apos;m Anubhav</h2>
-
-      <div className={`${styles.maskWrapper} pos-a`}>
+      <div className={`${styles.maskWrapper} pos-a center`}>
         <ThreeCanvas />
+      </div>
+
+      <div className={styles.mainContent}>
+        <h2>Hi, I&apos;m Anubhav</h2>
       </div>
     </section>
   );
