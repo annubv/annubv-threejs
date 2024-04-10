@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react';
 import { Canvas, useFrame, useLoader } from '@react-three/fiber';
-import { Mesh, MeshStandardMaterial } from 'three';
+import { Mesh, MeshStandardMaterial, Vector3 } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/Addons.js';
 
 function MeshComponent() {
@@ -35,8 +35,8 @@ function MeshComponent() {
 
   return (
     <>
-      <mesh ref={mesh} position={[0, -2.5, 0]}>
-        <primitive object={gltf.scene} scale={[0.01, 0.01, 0.01]} />
+      <mesh ref={mesh} position={[0, -2.5, -1.5]}>
+        <primitive object={gltf.scene} scale={[0.011, 0.011, 0.011]} />
       </mesh>
     </>
   );
