@@ -37,14 +37,14 @@ function MeshComponent() {
   return (
     <>
       <mesh ref={mesh} position={[0, -2.5, -1.5]}>
-        <primitive object={gltf.scene} scale={[0.011, 0.011, 0.011]} />
+        <primitive object={gltf.scene} scale={[0.013, 0.012, 0.012]} />
       </mesh>
     </>
   );
 }
 
 const ThreeCanvas = ({ parentRef }: any) => {
-  const [col, setCol] = useState(new Color('white'));
+  const [col, setCol] = useState(new Color('#c0c0c0'));
 
   return (
     <>

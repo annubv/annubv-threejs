@@ -1,8 +1,8 @@
 'use client';
 
+import Pill from '@/components/Pill';
 import React, { useState } from 'react';
 import styles from './time.module.scss';
-import { SourceCode } from '@/styles/font';
 
 const Time = () => {
   const [time, setTime] = useState(new Date());
@@ -14,13 +14,7 @@ const Time = () => {
   }, []);
 
   return (
-    <div className={`${styles.timecap}  ${SourceCode.className} pos-r center`}>
-      <svg fill="none" viewBox="0 0 86 24" className="pos-a">
-        <path
-          d="M7.237 23.5.5 16.764V7.237L7.237.5h71.526L85.5 7.237v9.527L78.763 23.5H7.237Z"
-          stroke="#484B45"
-        ></path>
-      </svg>
+    <Pill>
       <div className={styles.datetime}>
         <span className={styles.hours}>{time.getHours()}</span>
         <span className={styles.flash}>:</span>
@@ -31,7 +25,7 @@ const Time = () => {
           &nbsp;{getTimeZoneAbbreviation(time.getTimezoneOffset())}
         </span>
       </div>
-    </div>
+    </Pill>
   );
 };
 

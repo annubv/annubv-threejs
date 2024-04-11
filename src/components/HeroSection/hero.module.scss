@@ -4,18 +4,7 @@
   height: 100vh;
   pointer-events: auto;
   background: #191601;
-  background: radial-gradient(at center, #141201, #0c0101);
-}
-
-.mainContent {
-  position: absolute;
-  padding: calc(52px + 24px) 24px;
-  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
-  z-index: 10;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
+  background: radial-gradient(at center, #0f0e01, #0c0101);
 }
 
 .maskWrapper {
@@ -26,4 +15,37 @@
   left: 0;
   right: 0;
   z-index: 6;
+}
+
+.mainContent {
+  position: absolute;
+  padding: calc(52px + 24px) 24px 44px 24px;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+  z-index: 10;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contentBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.aboutsection {
+  max-width: 400px;
+}
+
+.aboutme {
+  position: relative;
+}
+
+.aboutcontent {
+  margin-top: 12px;
+  font-size: 16px;
 }
