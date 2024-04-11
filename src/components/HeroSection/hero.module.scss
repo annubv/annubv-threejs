@@ -1,21 +1,29 @@
 .heroSectionWrapper {
+  position: relative;
   width: 100%;
   height: 100vh;
-
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover;
-  background-color: var(--black);
+  pointer-events: auto;
+  background: #191601;
+  background: radial-gradient(at center, #141201, #0c0101);
 }
 
 .mainContent {
+  position: absolute;
   padding: calc(52px + 24px) 24px;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+  z-index: 10;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
 }
 
 .maskWrapper {
+  position: absolute;
+  pointer-events: none;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  // z-index: -1;
+  z-index: 6;
 }

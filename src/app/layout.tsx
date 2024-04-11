@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={Noto.className}>{children}</body>
+      <body className={`${Noto.className}`}>{children}</body>
     </html>
   );
 }

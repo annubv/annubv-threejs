@@ -1,11 +1,12 @@
 import React from 'react';
 import styles from './nav.module.scss';
+import Time from './Time';
 
 const Navbar = () => {
   return (
     <nav className={`${styles.navbar} full-width center space-between`}>
       <p>Anubhav Singh</p>
-      <p>Yo</p>
+      <Time />
     </nav>
   );
 };

@@ -38,3 +38,14 @@
 body {
   outline-color: #90ff21;
 }
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: var(--black);
+  background: #ffd700;
+}
+
+::selection {
+  color: var(--black);
+  background: #ffd700;
+}

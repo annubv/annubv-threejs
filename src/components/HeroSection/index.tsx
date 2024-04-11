@@ -1,15 +1,19 @@
-import React from 'react';
+'use client';
+
+import React, { useRef } from 'react';
 import styles from './hero.module.scss';
-import ThreeCanvas from '../ThreeCanvas';
+import ThreeCanvas from './ThreeCanvas';
 
 const HeroSection = () => {
+  const ref: any = useRef();
+
   return (
-    <section className={`${styles.heroSectionWrapper} pos-r`}>
+    <section className={`${styles.heroSectionWrapper} pos-r`} ref={ref}>
       <div className={`${styles.maskWrapper} pos-a center`}>
-        <ThreeCanvas />
+        <ThreeCanvas parentRef={ref} />
       </div>
 
-      <div className={styles.mainContent}>
+      <div className={`${styles.mainContent} pos-a`}>
         <h2>Hi, I&apos;m Anubhav</h2>
       </div>
     </section>
