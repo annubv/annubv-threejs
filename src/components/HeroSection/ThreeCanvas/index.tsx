@@ -43,19 +43,21 @@ function MeshComponent() {
   );
 }
 
-const ThreeCanvas = ({ parentRef }: any) => {
+interface IThreeCanvas {
+  parentRefs: Array<any>;
+}
+
+const ThreeCanvas = ({ parentRefs }: IThreeCanvas) => {
   const [col, setCol] = useState(new Color('#c0c0c0'));
 
   return (
     <>
       <Canvas
         onCreated={state => {
-          state.events.connect?.(parentRef.current);
+          for (let parentRef of parentRefs) {
+            state.events.connect?.(parentRef.current);
+          }
         }}
-
-        // onCreated={state => {
-        //   state.events.connect(parentRef.current);
-        // }}
       >
         <directionalLight
           position={[-10, -10, -10]}

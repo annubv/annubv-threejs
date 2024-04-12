@@ -1,0 +1,19 @@
+.verticalslider {
+  margin-top: 190px;
+  width: 700px;
+  overflow: hidden;
+  transform: rotate(-90deg);
+}
+
+.text {
+  animation: slideText 5s linear infinite;
+}
+
+@keyframes slideText {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

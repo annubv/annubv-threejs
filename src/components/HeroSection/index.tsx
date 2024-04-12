@@ -7,12 +7,12 @@ import Pill from '../Pill';
 import { Barlow } from '@/styles/font';
 
 const HeroSection = () => {
-  const ref: any = useRef();
+  const parRef: any = useRef();
 
   return (
-    <section className={`${styles.heroSectionWrapper} pos-r`} ref={ref}>
+    <section className={`${styles.heroSectionWrapper} pos-r`} ref={parRef}>
       <div className={`${styles.maskWrapper} pos-a center`}>
-        <ThreeCanvas parentRef={ref} />
+        <ThreeCanvas parentRefs={[parRef]} />
       </div>
 
       <div className={`${styles.mainContent} pos-a`}>
@@ -27,9 +27,9 @@ const HeroSection = () => {
             </Pill>
 
             <p className={`${styles.aboutcontent} ${Barlow.className}`}>
-              A COLLABORATIVE VISUAL DESIGNER AND ART DIRECTOR WITH A FOCUS ON
-              DIGITAL EXPERIENCES AND INTERFACES. BASED IN ZAGREB, WORKING WITH
-              CLIENTS WORLDWIDE. CURRENTLY DESIGN DIRECTOR AT Studio Null.
+              Versatile software developer adept at both frontend and backend.
+              Passionate about design and skilled in collaborative environments.
+              Let&apos;s build exceptional digital experiences together.
             </p>
           </div>
         </div>
