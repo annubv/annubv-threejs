@@ -1,5 +1,76 @@
 .aboutsection {
   background-color: #0c0101;
-  height: 1000px;
   width: 100%;
+  padding: 90px 0;
+}
+
+.descContainer {
+  padding: 24px;
+
+  img {
+    height: 90px;
+    width: auto;
+    margin-left: 24px;
+    display: none;
+    @media only screen and (min-width: 1075px) {
+      display: block;
+    }
+  }
+
+  .profilePic {
+    height: 80px;
+    clip-path: polygon(
+      15% 0,
+      85% 0,
+      100% 30%,
+      100% 70%,
+      85% 100%,
+      15% 100%,
+      0% 70%,
+      0% 30%
+    );
+  }
+
+  h2 {
+    font-size: 56px;
+    font-weight: 600;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+
+    @media only screen and (min-width: 800px) {
+      font-size: 96px;
+    }
+  }
+}
+
+.bottomAboutContainer {
+  padding: 24px;
+}
+
+.infoContainer {
+  max-width: 800px;
+}
+
+.infoText {
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+  margin-top: 18px;
+  font-size: 32px;
+
+  @media only screen and (min-width: 800px) {
+    font-size: 48px;
+  }
+}
+
+.mainProfilePic {
+  height: 500px;
+  width: auto;
+  margin-left: 24px;
+  transition: transform 0.4s;
+  display: none;
+  @media only screen and (min-width: 800px) {
+    display: block;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }

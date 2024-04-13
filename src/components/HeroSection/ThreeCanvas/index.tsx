@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Canvas, useFrame, useLoader } from '@react-three/fiber';
 import { Color, Mesh } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/Addons.js';
@@ -46,10 +46,21 @@ function MeshComponent() {
 interface IThreeCanvas {
   parentRefs: Array<any>;
   canvClass: string;
+  hovElement: string;
 }
 
-const ThreeCanvas = ({ parentRefs, canvClass }: IThreeCanvas) => {
+const ThreeCanvas = ({ parentRefs, canvClass, hovElement }: IThreeCanvas) => {
   const [col, setCol] = useState(new Color('#c0c0c0'));
+
+  useEffect(() => {
+    if (hovElement === 'name') {
+      setCol(new Color('gold'));
+    } else if (hovElement === 'qr') {
+      setCol(new Color('red'));
+    } else {
+      setCol(new Color('#c0c0c0'));
+    }
+  }, [hovElement]);
 
   return (
     <Canvas

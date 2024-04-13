@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import ThreeCanvas from './ThreeCanvas';
 import styles from './hero.module.scss';
 import Pill from '../Pill';
@@ -11,16 +11,32 @@ const PUB_LINK = process.env.NEXT_PUBLIC_CLIENT_URL ?? '';
 
 const HeroSection = () => {
   const parRef: any = useRef();
+  const [hovElement, setHovElement] = useState('');
+
+  function handleHovElement(newVal: string) {
+    setHovElement(newVal);
+  }
+  function clearHovElement() {
+    setHovElement('');
+  }
 
   return (
     <section className={`${styles.heroSectionWrapper} pos-r`} ref={parRef}>
       <ThreeCanvas
         parentRefs={[parRef]}
+        hovElement={hovElement}
         canvClass={`${styles.maskWrapper} pos-a center`}
       />
 
       <div className={`${styles.mainContent} pos-a`}>
-        <h2>Hi, I&apos;m Anubhav</h2>
+        <h2
+          onMouseEnter={() => {
+            handleHovElement('name');
+          }}
+          onMouseLeave={clearHovElement}
+        >
+          Hi, I&apos;m Anubhav
+        </h2>
 
         <div className={`${styles.contentBottom}`}>
           <div className={styles.aboutsection}>
@@ -35,7 +51,13 @@ const HeroSection = () => {
             </p>
           </div>
 
-          <div className={`${styles.qrContainer} center`}>
+          <div
+            className={`${styles.qrContainer} center`}
+            onMouseEnter={() => {
+              handleHovElement('qr');
+            }}
+            onMouseLeave={clearHovElement}
+          >
             <QRCode
               className={styles.qrBox}
               value={PUB_LINK}
