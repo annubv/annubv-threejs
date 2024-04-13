@@ -15,9 +15,7 @@ const Weather = () => {
     try {
       const response = await fetch(
         `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=New Delhi`,
-        {
-          method: 'GET',
-        }
+        { mode: 'cors', method: 'GET' }
       );
       const responseData = await response.json();
 
