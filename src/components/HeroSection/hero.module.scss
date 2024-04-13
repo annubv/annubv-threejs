@@ -9,15 +9,12 @@
 
 .maskWrapper {
   position: absolute;
-  pointer-events: none;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 19;
-  * {
-    pointer-events: none;
-  }
+  pointer-events: none;
 }
 
 .mainContent {
@@ -59,4 +56,18 @@
   flex-direction: row-reverse;
   margin-right: 90px;
   padding: 24px;
+}
+
+.qrContainer {
+  background-color: var(--ottoman);
+  padding: 3px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+  display: none;
+
+  @media only screen and (min-width: 800px) {
+    display: flex;
+  }
+}
+
+.qrBox {
 }

@@ -5,20 +5,22 @@ import ThreeCanvas from './ThreeCanvas';
 import styles from './hero.module.scss';
 import Pill from '../Pill';
 import { Barlow } from '@/styles/font';
+import QRCode from 'react-qr-code';
+
+const PUB_LINK = process.env.NEXT_PUBLIC_CLIENT_URL ?? '';
 
 const HeroSection = () => {
   const parRef: any = useRef();
 
   return (
     <section className={`${styles.heroSectionWrapper} pos-r`} ref={parRef}>
-      <div className={`${styles.maskWrapper} pos-a center`}>
-        <ThreeCanvas parentRefs={[parRef]} />
-      </div>
+      <ThreeCanvas
+        parentRefs={[parRef]}
+        canvClass={`${styles.maskWrapper} pos-a center`}
+      />
 
       <div className={`${styles.mainContent} pos-a`}>
-        <div>
-          <h2>Hi, I&apos;m Anubhav</h2>
-        </div>
+        <h2>Hi, I&apos;m Anubhav</h2>
 
         <div className={`${styles.contentBottom}`}>
           <div className={styles.aboutsection}>
@@ -31,6 +33,15 @@ const HeroSection = () => {
               Passionate about design and skilled in collaborative environments.
               Let&apos;s build exceptional digital experiences together.
             </p>
+          </div>
+
+          <div className={`${styles.qrContainer} center`}>
+            <QRCode
+              className={styles.qrBox}
+              value={PUB_LINK}
+              size={100}
+              bgColor="var(--ottoman)"
+            />
           </div>
         </div>
       </div>

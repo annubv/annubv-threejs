@@ -45,30 +45,30 @@ function MeshComponent() {
 
 interface IThreeCanvas {
   parentRefs: Array<any>;
+  canvClass: string;
 }
 
-const ThreeCanvas = ({ parentRefs }: IThreeCanvas) => {
+const ThreeCanvas = ({ parentRefs, canvClass }: IThreeCanvas) => {
   const [col, setCol] = useState(new Color('#c0c0c0'));
 
   return (
-    <>
-      <Canvas
-        onCreated={state => {
-          for (let parentRef of parentRefs) {
-            state.events.connect?.(parentRef.current);
-          }
-        }}
-      >
-        <directionalLight
-          position={[-10, -10, -10]}
-          intensity={15}
-          color="gold"
-        />
-        <directionalLight position={[20, 20, 20]} intensity={1} color="red" />
-        <ambientLight color={col} intensity={4} />
-        <MeshComponent />
-      </Canvas>
-    </>
+    <Canvas
+      className={canvClass}
+      onCreated={state => {
+        for (let parentRef of parentRefs) {
+          state.events.connect?.(parentRef.current);
+        }
+      }}
+    >
+      <directionalLight
+        position={[-10, -10, -10]}
+        intensity={15}
+        color="gold"
+      />
+      <directionalLight position={[20, 20, 20]} intensity={1} color="red" />
+      <ambientLight color={col} intensity={4} />
+      <MeshComponent />
+    </Canvas>
   );
 };
 
