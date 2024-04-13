@@ -41,10 +41,17 @@ const Weather = () => {
   }
 
   return (
-    <Pill className={styles.weathcap}>
-      <span>Delhi</span>
-      <Image src={`https:${icon}`} height={16} width={16} alt="weather" />
-    </Pill>
+    <div className="center">
+      <Pill className={styles.weathcap}>
+        <span>Delhi</span>
+        <Image src={`https:${icon}`} height={16} width={16} alt="weather" />
+      </Pill>
+      <Pill className={styles.weathcap}>
+        <p>
+          <span> {temp}°C</span>
+        </p>
+      </Pill>
+    </div>
   );
 };
 
