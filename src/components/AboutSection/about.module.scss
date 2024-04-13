@@ -64,13 +64,8 @@
   height: 500px;
   width: auto;
   margin-left: 24px;
-  transition: transform 0.4s;
   display: none;
   @media only screen and (min-width: 800px) {
     display: block;
-  }
-
-  &:hover {
-    transform: scale(1.05);
   }
 }
