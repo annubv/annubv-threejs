@@ -1,9 +1,11 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, Suspense } from 'react';
 import { Canvas, useFrame, useLoader } from '@react-three/fiber';
 import { Color, Mesh } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/Addons.js';
+import { Html, useProgress } from '@react-three/drei';
+import { SourceCode } from '@/styles/font';
 
 function MeshComponent() {
   const fileUrl = '/sol.glb';
@@ -43,6 +45,20 @@ function MeshComponent() {
   );
 }
 
+function Loader() {
+  const { progress } = useProgress();
+  return (
+    <Html center>
+      <p
+        className={`center ${SourceCode.className}`}
+        style={{ width: '500px' }}
+      >
+        {progress} % loaded
+      </p>
+    </Html>
+  );
+}
+
 interface IThreeCanvas {
   parentRefs: Array<any>;
   canvClass: string;
@@ -78,7 +94,10 @@ const ThreeCanvas = ({ parentRefs, canvClass, hovElement }: IThreeCanvas) => {
       />
       <directionalLight position={[20, 20, 20]} intensity={1} color="red" />
       <ambientLight color={col} intensity={4} />
-      <MeshComponent />
+
+      <Suspense fallback={<Loader />}>
+        <MeshComponent />
+      </Suspense>
     </Canvas>
   );
 };

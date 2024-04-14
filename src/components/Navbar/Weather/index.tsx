@@ -14,7 +14,7 @@ const Weather = () => {
   async function getWeatherData() {
     try {
       const response = await fetch(
-        `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=New Delhi`,
+        `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=New Delhi`,
         { mode: 'cors', method: 'GET' }
       );
       const responseData = await response.json();
@@ -23,8 +23,6 @@ const Weather = () => {
         setTemp(responseData.current.temp_c);
         setIcon(responseData.current.condition.icon);
       }
-
-      console.log(responseData);
     } catch (error) {
       console.error('Error:', error);
     }
@@ -32,6 +30,7 @@ const Weather = () => {
 
   useEffect(() => {
     getWeatherData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (!icon) {

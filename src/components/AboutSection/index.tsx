@@ -42,9 +42,9 @@ const AboutSection = () => {
 
           <p className={`${Barlow.className} ${styles.infoText}`}>
             I like to work on everything! Frontend, Backend, Art, Design.
-            Currently experimenting with Kafka multi-broker kraft cluster. We
-            can talk about tech, entertainment, gaming and football. Humble brag
-            - I peaked Immortal 2 in Valorant.
+            Currently experimenting with Kafka. We can talk about tech,
+            entertainment, gaming and football. Humble brag - I peaked Immortal
+            2 in Valorant.
           </p>
         </div>
 
