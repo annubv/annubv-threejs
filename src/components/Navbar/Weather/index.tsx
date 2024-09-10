@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
-import styles from './weather.module.scss';
-import Pill from '@/components/Pill';
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import styles from "./weather.module.scss";
+import Pill from "@/components/Pill";
 
 const Weather = () => {
   const API_KEY = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
@@ -15,7 +15,7 @@ const Weather = () => {
     try {
       const response = await fetch(
         `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=New Delhi`,
-        { mode: 'cors', method: 'GET' }
+        { mode: "cors", method: "GET" }
       );
       const responseData = await response.json();
 
@@ -24,7 +24,7 @@ const Weather = () => {
         setIcon(responseData.current.condition.icon);
       }
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   }
 

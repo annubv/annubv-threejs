@@ -1,9 +1,9 @@
-import Navbar from '@/components/Navbar';
-import HeroSection from '@/components/HeroSection';
-import AboutSection from '@/components/AboutSection';
-import Footer from '@/components/Footer';
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
+import Footer from "@/components/Footer";
 
-export default function Home() {
+const Home = () => {
   return (
     <main>
       <Navbar />
@@ -12,4 +12,6 @@ export default function Home() {
       <Footer />
     </main>
   );
-}
+};
+
+export default Home;

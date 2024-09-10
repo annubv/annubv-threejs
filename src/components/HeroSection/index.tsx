@@ -1,23 +1,24 @@
-'use client';
+"use client";
 
-import React, { useRef, useState } from 'react';
-import ThreeCanvas from './ThreeCanvas';
-import styles from './hero.module.scss';
-import Pill from '../Pill';
-import { Barlow } from '@/styles/font';
-import QRCode from 'react-qr-code';
+import React, { useRef, useState } from "react";
+import ThreeCanvas from "./ThreeCanvas";
+import styles from "./hero.module.scss";
+import Pill from "../Pill";
+import { Barlow } from "@/styles/font";
+import QRCode from "react-qr-code";
 
-const PUB_LINK = process.env.NEXT_PUBLIC_CLIENT_URL ?? '';
+const PUB_LINK =
+  process.env.NEXT_PUBLIC_CLIENT_URL ?? "" + "/anubhav_resume.pdf";
 
 const HeroSection = () => {
   const parRef: any = useRef();
-  const [hovElement, setHovElement] = useState('');
+  const [hovElement, setHovElement] = useState("");
 
   function handleHovElement(newVal: string) {
     setHovElement(newVal);
   }
   function clearHovElement() {
-    setHovElement('');
+    setHovElement("");
   }
 
   return (
@@ -31,7 +32,7 @@ const HeroSection = () => {
       <div className={`${styles.mainContent} pos-a`}>
         <h2
           onMouseEnter={() => {
-            handleHovElement('name');
+            handleHovElement("name");
           }}
           onMouseLeave={clearHovElement}
         >
@@ -54,7 +55,7 @@ const HeroSection = () => {
           <div
             className={`${styles.qrContainer} center`}
             onMouseEnter={() => {
-              handleHovElement('qr');
+              handleHovElement("qr");
             }}
             onMouseLeave={clearHovElement}
           >
